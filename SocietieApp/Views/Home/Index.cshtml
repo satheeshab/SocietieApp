@@ -1,24 +1,170 @@
-﻿<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
-        a broad range of clients, including browsers and mobile devices. ASP.NET Web API
-        is an ideal platform for building RESTful applications on the .NET Framework.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301870">Learn more &raquo;</a></p>
+﻿@{
+    ViewBag.Title = "365Societies";
+}
+<div>
+    <link rel="stylesheet" href="~/Content/Site.css" />
+    <!-- Full Page Image Background Carousel Header -->
+    <header id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+        </ol>
+
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <!-- Set the first background image using inline CSS below. -->
+                <div class="fill">
+                    <img src="~/Images/home/moving_img1.png" class="mbc-top-img" alt="" />
+                </div>
+                <div class="carousel-caption">
+                    <h2>Caption 1</h2>
+                    <p>Details for first image</p>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the second background image using inline CSS below. -->
+                <div class="fill">
+                    <img src="~/Images/home/moving_img2.png" class="mbc-top-img" alt="" />
+                </div>
+                <div class="carousel-caption">
+                    <h2>Caption 2</h2>
+                    <p>Details for second image</p>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill">
+                    <img src="~/Images/home/moving_img3.png" class="mbc-top-img" alt="" />
+                </div>
+                <div class="carousel-caption">
+                    <h2>Caption 3</h2>
+                    <p>Details for third image</p>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill">
+                    <img src="~/Images/home/moving_img4.png" class="mbc-top-img" alt="" />
+                </div>
+                <div class="carousel-caption">
+                    <h2>Caption 4</h2>
+                    <p>Details for fourth image</p>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill">
+                    <img src="~/Images/home/moving_img3.png" class="mbc-top-img" alt="" />
+                </div>
+                <div class="carousel-caption">
+                    <h2>Caption 5</h2>
+                    <p>Details for fifth image</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+
+    </header>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    @*@Html.Partial("_RegisterPartial")*@
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="alert">Save changes</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301871">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301872">Learn more &raquo;</a></p>
+
+    <div class="container">
+        <div class="container-fluid">
+            <h3>We offers following functions to our clients</h3>
+            <div class="row">
+                <div class="col-sm-3" style="background-color:lavender;">
+                    <h4>Basic Functionalities</h4>
+                    <p>We offers our clients a powerful, patterns-based way to manage acounts and expenses</p>
+                </div>
+                <div class="col-sm-9" style="background-color:lavenderblush;">
+                    <p>
+                        We offers our clients a powerful, patterns-based way to manage acounts and expenses that
+                        enables a clean maintenance of records and that gives you full control over your
+                        society income and expenses. 365Societies includes many features that enable
+                        fast, user friendly pages for maintaining monthly expenses and maintenance charge and
+                        asset information.
+                    </p> @Html.ActionLink("See Details", "About", "Home")
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3" style="background-color:lavender;">
+                    <h4>Maintenence Fee and Expenses</h4>
+                    <p>We helps you maintain monthly maintenence charges based on your requirements</p>
+                </div>
+                <div class="col-sm-9" style="background-color:lavenderblush;">
+                    <p>
+                        Maintenance charges can be manged as fixed charge or variable charge for each unit based on criteria.
+                        Variable charges can be maintained based on unit type or unit area..
+                    </p> @Html.ActionLink("See Details", "About", "Home")
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3" style="background-color:lavender;">
+                    <h4>Asset Maintenance</h4>
+                    <p>Assets for the society can be maintained and any expense incured for that can be added</p>
+                </div>
+                <div class="col-sm-9" style="background-color:lavenderblush;">
+                    <p>
+                        This will helps to maintain the account book updated as soon as an expense head added into the system.
+                    </p> @Html.ActionLink("See Details", "About", "Home")
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3" style="background-color:lavender;">
+                    <h4>Payment Reminders</h4>
+                    <p>Monthly reccurring expenses and ad-hoc expenses can be created and allocated to each unit</p>
+                </div>
+                <div class="col-sm-9" style="background-color:lavenderblush;">
+                    <p>
+                        Monthly reccurring expenses and ad-hoc expenses can be created and allocated to each unit.
+                        Payment reminders will be generated in advance and comminicated to unit holders through
+                        SMS and or email.
+                    </p> @Html.ActionLink("See Details", "About", "Home")
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3" style="background-color:lavender;">
+                    <h4>Payment Gateway</h4>
+                    <p>Online payment can be done through our Payment Gateway</p>
+                </div>
+                <div class="col-sm-9" style="background-color:lavenderblush;">
+                    <p>
+                        Online payment can be done through our Payment Gateway enables users to save time
+                        offers more flexibility to pay monthly maintenance charges on time.
+                        Payment Gateway offers a reliable channel to pay online using secure socket layer
+                        which is signed by VeriSign.
+                    </p> @Html.ActionLink("See Details", "About", "Home")
+                </div>
+            </div>
+        </div>
     </div>
 </div>

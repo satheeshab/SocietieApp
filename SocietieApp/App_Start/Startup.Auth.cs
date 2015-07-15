@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.AspNet.Identity;
+﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
+using Microsoft.Owin.Security.Facebook;
+using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using SocietieApp.Providers;
+using System;
 
 namespace SocietieApp
 {
@@ -55,11 +55,23 @@ namespace SocietieApp
             //    consumerKey: "",
             //    consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //    appId: "",
-            //    appSecret: "");
+            var fbOptions = new FacebookAuthenticationOptions();
+            fbOptions.AppId = "443769265795638";
+            fbOptions.AppSecret = "9d1f61bf441a591906149a0abf21a4c4";
+            fbOptions.Scope.Add("email");
 
-            //app.UseGoogleAuthentication();
+            app.UseFacebookAuthentication(fbOptions);
+
+            var googleOptions = new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "380736477376-37l3mjij7k6d0n59ksurj7le946qq958.apps.googleusercontent.com",
+                ClientSecret = "U0DaoW3LfrgwBHHuOySfS8U4",
+                CallbackPath = new PathString("/signin-google")
+            };
+            googleOptions.Scope.Add("email");
+
+            app.UseGoogleAuthentication(googleOptions);
+             
         }
     }
 }
